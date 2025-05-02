@@ -106,6 +106,14 @@ export default function ContactPage() {
               />
             </div>
 
+            <div className="bg-orange-100 dark:bg-orange-900/20 p-4 rounded-lg">
+              <p className="font-medium">💬</p>
+              <p className="text-muted-foreground">
+               When reaching out, feel free to include your Instagram, LinkedIn, or GitHub—I’d 
+              love to check out your work and connect better!
+              </p>
+            </div>
+
             <div className="space-y-2">
               <label htmlFor="message" className="block font-medium">
                 Message
