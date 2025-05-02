@@ -27,6 +27,9 @@ export default function Home() {
             >
               <Link href="/contact">Get in Touch</Link>
             </Button>
+            <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white">
+              <Link href="https://drive.google.com/file/d/1uLhiX8uHTzRVn4StyT6P-fgbjbqP5plX/view?usp=drive_link">Download CV</Link>
+            </Button>
           </div>
         </div>
         <div className="flex-1 relative w-full aspect-square max-w-md">
