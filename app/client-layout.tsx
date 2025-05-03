@@ -7,6 +7,7 @@ import { Footer } from "@/components/footer"
 import { MainNav } from "@/components/main-nav"
 import { MobileNav } from "@/components/mobile-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { EntryAnimation } from "@/components/entry-animation"
 
 interface ClientRootLayoutProps {
   children: React.ReactNode
@@ -14,22 +15,25 @@ interface ClientRootLayoutProps {
 
 export function ClientRootLayout({ children }: ClientRootLayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col">
-      <div className="border-orange-500 border-[25px] min-h-screen flex flex-col">
-        <header className="container mx-auto py-4">
-          <div className="flex justify-between items-center">
-            <h1 className="text-2xl font-bold">Portfolio</h1>
-            <div className="flex items-center gap-4">
-              <MainNav />
-              <MobileNav />
-              <ThemeToggle />
+    <>
+      <EntryAnimation />
+      <div className="min-h-screen flex flex-col">
+        <div className="border-orange-500 border-[25px] min-h-screen flex flex-col">
+          <header className="container mx-auto py-4">
+            <div className="flex justify-between items-center">
+              <h1 className="text-2xl font-bold">Portfolio</h1>
+              <div className="flex items-center gap-4">
+                <MainNav />
+                <MobileNav />
+                <ThemeToggle />
+              </div>
             </div>
-          </div>
-        </header>
-        <main className="flex-1 container mx-auto py-8 px-4">{children}</main>
-        <FooterWrapper />
+          </header>
+          <main className="flex-1 container mx-auto py-8 px-4">{children}</main>
+          <FooterWrapper />
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

@@ -92,7 +92,7 @@ export default function ExperiencePage() {
                   rel="noopener noreferrer" 
                   className="text-lg font-semibold hover:underline"
                 >
-                  UX Design Professional Certificate
+                  Investly (Orbital)
                 </a>
               </h3>
               <p className="text-muted-foreground">

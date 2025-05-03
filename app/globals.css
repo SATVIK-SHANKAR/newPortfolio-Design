@@ -65,3 +65,39 @@
 .highlight {
   @apply bg-orange-200 dark:bg-orange-500/60 px-1;
 }
+
+@keyframes expand {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(100);
+    opacity: 0;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@layer utilities {
+  .animate-expand {
+    animation: expand 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  }
+
+  .animate-reveal {
+    animation: reveal 2.2s ease-out forwards;
+  }
+}
