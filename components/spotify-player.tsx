@@ -26,7 +26,7 @@ export function SpotifyPlayer({ playlistId }: SpotifyPlayerProps) {
   if (!mounted) return <div className="h-[360px] w-full bg-muted animate-pulse rounded-lg"></div>
 
   return (
-    <div className="border-2 border-[#F97315] rounded-lg overflow-hidden" style={{ height: "360px" }}>
+    <div className="border-2 border-theme-500 rounded-lg overflow-hidden" style={{ height: "360px" }}>
       <iframe
         title="Spotify Embed: Recommendation Playlist"
         src={`https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator&theme=${theme}`}

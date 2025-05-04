@@ -4,14 +4,13 @@
 
 @layer base {
   :root {
+    /* Base colors */
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 24 70% 50%;
-    --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96.1%;
@@ -22,10 +21,68 @@
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 24 70% 50%;
     --radius: 0.5rem;
-    --orange-highlight: 24 100% 93%;
-    --orange-highlight-dark: 24 100% 65%;
+
+    /* Theme-specific colors - Orange theme */
+    --theme-50: 24 100% 93%;
+    --theme-100: 24 94% 83%;
+    --theme-200: 24 94% 73%;
+    --theme-300: 24 91% 63%;
+    --theme-400: 24 90% 53%;
+    --theme-500: 24 94% 53%;
+    --theme-600: 24 90% 43%;
+    --theme-700: 24 90% 33%;
+    --theme-800: 24 90% 23%;
+    --theme-900: 24 90% 13%;
+    --theme-950: 24 90% 7%;
+
+    /* Primary is based on theme */
+    --primary: var(--theme-500);
+    --primary-foreground: 0 0% 98%;
+    --ring: var(--theme-500);
+  }
+
+  [data-color-theme="orange"] {
+    --theme-50: 24 100% 93%;
+    --theme-100: 24 94% 83%;
+    --theme-200: 24 94% 73%;
+    --theme-300: 24 91% 63%;
+    --theme-400: 24 90% 53%;
+    --theme-500: 24 94% 53%;
+    --theme-600: 24 90% 43%;
+    --theme-700: 24 90% 33%;
+    --theme-800: 24 90% 23%;
+    --theme-900: 24 90% 13%;
+    --theme-950: 24 90% 7%;
+  }
+
+  [data-color-theme="purple"] {
+    --theme-50: 260 59% 95%;
+    --theme-100: 259 59% 90%;
+    --theme-200: 260 60% 80%;
+    --theme-300: 260 60% 70%;
+    --theme-400: 260 60% 60%;
+    --theme-500: 260 60% 59%;
+    --theme-600: 260 60% 49%;
+    --theme-700: 260 60% 39%;
+    --theme-800: 260 60% 29%;
+    --theme-900: 260 60% 19%;
+    --theme-950: 260 60% 9%;
+  }
+
+  /* Add the steel blue theme variables after the purple theme */
+  [data-color-theme="steel"] {
+    --theme-50: 220 30% 95%;
+    --theme-100: 220 30% 90%;
+    --theme-200: 220 30% 80%;
+    --theme-300: 220 30% 70%;
+    --theme-400: 220 30% 60%;
+    --theme-500: 220 30% 59%;
+    --theme-600: 220 30% 49%;
+    --theme-700: 220 30% 39%;
+    --theme-800: 220 30% 29%;
+    --theme-900: 220 30% 19%;
+    --theme-950: 220 30% 9%;
   }
 
   .dark {
@@ -35,7 +92,7 @@
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 98%;
-    --primary: 24 70% 50%;
+    --primary: var(--theme-500);
     --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 14.9%;
     --secondary-foreground: 0 0% 98%;
@@ -47,9 +104,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 24 70% 50%;
-    --orange-highlight: 24 100% 93%;
-    --orange-highlight-dark: 24 100% 65%;
+    --ring: var(--theme-500);
   }
 }
 
@@ -63,7 +118,7 @@
 }
 
 .highlight {
-  @apply bg-orange-200 dark:bg-orange-500/60 px-1;
+  @apply bg-theme-200 dark:bg-theme-500/60 px-1;
 }
 
 @keyframes expand {
@@ -100,4 +155,11 @@
   .animate-reveal {
     animation: reveal 2.2s ease-out forwards;
   }
+}
+
+/* Add transition for theme changes */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
 }

@@ -68,7 +68,7 @@ export default function QuotesPage() {
         </h1>
 
         <div className="relative">
-          <Quote className="absolute -top-6 -left-6 text-orange-200 dark:text-orange-500/60 h-12 w-12 opacity-50" />
+          <Quote className="absolute -top-6 -left-6 text-theme-200 dark:text-theme-500/60 h-12 w-12 opacity-50" />
           <blockquote className="text-2xl md:text-3xl font-serif italic px-8 py-4">{quote.text}</blockquote>
           <div className="mt-4 text-right text-lg text-muted-foreground">
             — <span className="highlight">{quote.author}</span>

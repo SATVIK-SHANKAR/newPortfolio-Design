@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { ColorThemeProvider } from "@/components/theme-context"
 import { ClientRootLayout } from "./client-layout"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -10,7 +11,6 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Portfolio | Designer & Developer",
   description: "Personal portfolio website for a designer and developer",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -28,7 +28,9 @@ export default function RootLayout({
           disableTransitionOnChange
           storageKey="portfolio-theme"
         >
-          <ClientRootLayout>{children}</ClientRootLayout>
+          <ColorThemeProvider>
+            <ClientRootLayout>{children}</ClientRootLayout>
+          </ColorThemeProvider>
         </ThemeProvider>
       </body>
     </html>

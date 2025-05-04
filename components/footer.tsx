@@ -9,7 +9,7 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Portfolio</h3>
             <p className="text-muted-foreground">
-              Creating <span className="bg-orange-200 dark:bg-orange-900/50 px-1">thoughtful</span> digital experiences
+              Creating <span className="bg-theme-200 dark:bg-theme-900/50 px-1">thoughtful</span> digital experiences
               that blend form and function.
             </p>
           </div>
@@ -64,10 +64,6 @@ export function Footer() {
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Link>
-              {/* <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Mail className="h-5 w-5" />
-                <span className="sr-only">Email</span>
-              </Link> */}
             </div>
           </div>
         </div>
@@ -75,8 +71,8 @@ export function Footer() {
         <div className="border-t mt-8 pt-8 flex flex-col md:flex-row justify-between items-center dark:border-gray-800">
           <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Portfolio. All rights reserved.</p>
           <p className="text-sm text-muted-foreground mt-4 md:mt-0">
-            <span className="bg-yellow-100 dark:bg-yellow-900/30 px-1">Designed</span> and{" "}
-            <span className="bg-orange-200 dark:bg-orange-900/50 px-1">developed</span> with passion
+            <span className="bg-theme-200 dark:bg-theme-900/50 px-1">Designed</span> and{" "}
+            <span className="bg-theme-200 dark:bg-theme-900/50 px-1">developed</span> with passion
           </p>
         </div>
       </div>

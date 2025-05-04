@@ -29,7 +29,7 @@ export function EntryAnimation() {
       }`}
     >
       <div className="w-full h-full bg-background flex items-center justify-center">
-        <div className="w-6 h-6 rounded-full bg-[#F97315] animate-expand" />
+        <div className="w-6 h-6 rounded-full bg-theme-500 animate-expand" />
       </div>
     </div>
   )

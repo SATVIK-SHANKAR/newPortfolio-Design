@@ -300,33 +300,27 @@ export default function PlacePage({ params }: { params: { place: string } }) {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <Button variant="ghost" asChild className="mb-6 hover:bg-orange-100 dark:hover:bg-orange-900/20">
+      <Button variant="ghost" asChild className="mb-6 hover:bg-theme-100 dark:hover:bg-theme-900/20">
         <Link href="/more-me">
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Places
         </Link>
       </Button>
 
-      <div className="relative aspect-[2/1] mb-8">
-        <Image
-          src={`/placeholder.svg?height=600&width=1200&text=${placeData.name}`}
-          alt={placeData.name}
-          fill
-          className="object-cover rounded-lg"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
-          <h1 className="text-4xl md:text-5xl font-bold">{placeData.name}</h1>
-          <p className="text-xl opacity-90">{placeData.description}</p>
-        </div>
+      <div className="mb-8">
+        <h1 className="text-5xl font-bold mb-2">
+          <span className="bg-theme-200 dark:bg-theme-900/50 px-2">{placeData.name}</span>
+        </h1>
+        <p className="text-xl text-muted-foreground">{placeData.description}</p>
       </div>
 
       <div className="space-y-12">
         {/* Best Things to Eat */}
         <section>
           <div className="flex items-center gap-3 mb-6">
-            <Utensils className="text-orange-500 h-6 w-6" />
+            <Utensils className="text-theme-500 h-6 w-6" />
             <h2 className="text-3xl font-bold">
-              Best Things to <span className="bg-orange-200 dark:bg-orange-900/50 px-2">Eat</span>
+              Best Things to <span className="bg-theme-200 dark:bg-theme-900/50 px-2">Eat</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
@@ -342,9 +336,9 @@ export default function PlacePage({ params }: { params: { place: string } }) {
         {/* Must-Visit Spots */}
         <section>
           <div className="flex items-center gap-3 mb-6">
-            <MapPin className="text-orange-500 h-6 w-6" />
+            <MapPin className="text-theme-500 h-6 w-6" />
             <h2 className="text-3xl font-bold">
-              Must-Visit <span className="bg-orange-200 dark:bg-orange-900/50 px-2">Spots</span>
+              Must-Visit <span className="bg-theme-200 dark:bg-theme-900/50 px-2">Spots</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
@@ -360,9 +354,9 @@ export default function PlacePage({ params }: { params: { place: string } }) {
         {/* Things to Do */}
         <section>
           <div className="flex items-center gap-3 mb-6">
-            <Compass className="text-orange-500 h-6 w-6" />
+            <Compass className="text-theme-500 h-6 w-6" />
             <h2 className="text-3xl font-bold">
-              Things to <span className="bg-orange-200 dark:bg-orange-900/50 px-2">Do</span>
+              Things to <span className="bg-theme-200 dark:bg-theme-900/50 px-2">Do</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
@@ -378,9 +372,9 @@ export default function PlacePage({ params }: { params: { place: string } }) {
         {/* Scenic Points */}
         <section>
           <div className="flex items-center gap-3 mb-6">
-            <Mountain className="text-orange-500 h-6 w-6" />
+            <Mountain className="text-theme-500 h-6 w-6" />
             <h2 className="text-3xl font-bold">
-              Scenic <span className="bg-orange-200 dark:bg-orange-900/50 px-2">Points</span>
+              Scenic <span className="bg-theme-200 dark:bg-theme-900/50 px-2">Points</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
@@ -396,9 +390,9 @@ export default function PlacePage({ params }: { params: { place: string } }) {
         {/* My Experience */}
         <section>
           <div className="flex items-center gap-3 mb-6">
-            <MessageSquare className="text-orange-500 h-6 w-6" />
+            <MessageSquare className="text-theme-500 h-6 w-6" />
             <h2 className="text-3xl font-bold">
-              My <span className="bg-orange-200 dark:bg-orange-900/50 px-2">Experience</span>
+              My <span className="bg-theme-200 dark:bg-theme-900/50 px-2">Experience</span>
             </h2>
           </div>
           <div className="border rounded-lg p-6 bg-card">
@@ -409,9 +403,9 @@ export default function PlacePage({ params }: { params: { place: string } }) {
         {/* Best Time to Visit */}
         <section>
           <div className="flex items-center gap-3 mb-6">
-            <Calendar className="text-orange-500 h-6 w-6" />
+            <Calendar className="text-theme-500 h-6 w-6" />
             <h2 className="text-3xl font-bold">
-              Best Time to <span className="bg-orange-200 dark:bg-orange-900/50 px-2">Visit</span>
+              Best Time to <span className="bg-theme-200 dark:bg-theme-900/50 px-2">Visit</span>
             </h2>
           </div>
           <div className="border rounded-lg p-6 bg-card">
@@ -423,7 +417,7 @@ export default function PlacePage({ params }: { params: { place: string } }) {
                   key={month}
                   className={`text-center py-3 rounded-lg ${
                     placeData.bestTimeToVisit.bestMonths.includes(month)
-                      ? "bg-orange-100 dark:bg-orange-900/30"
+                      ? "bg-theme-100 dark:bg-theme-900/30"
                       : "bg-gray-100 dark:bg-gray-800"
                   }`}
                 >
@@ -437,9 +431,9 @@ export default function PlacePage({ params }: { params: { place: string } }) {
         {/* Image Gallery */}
         <section>
           <div className="flex items-center gap-3 mb-6">
-            <ImageIcon className="text-orange-500 h-6 w-6" />
+            <ImageIcon className="text-theme-500 h-6 w-6" />
             <h2 className="text-3xl font-bold">
-              Image <span className="bg-orange-200 dark:bg-orange-900/50 px-2">Gallery</span>
+              Image <span className="bg-theme-200 dark:bg-theme-900/50 px-2">Gallery</span>
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

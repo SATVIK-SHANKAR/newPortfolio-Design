@@ -31,7 +31,7 @@ export default function BlogsPage() {
           <div key={blog.id} className="border rounded-lg overflow-hidden group hover:shadow-md transition-all">
             <div className="relative aspect-video">
               <Image src={blog.image || "/placeholder.svg"} alt={blog.title} fill className="object-cover" />
-              <div className="absolute top-3 left-3 bg-orange-500 text-white px-2 py-1 rounded-full text-xs">
+              <div className="absolute top-3 left-3 bg-theme-500 text-white px-2 py-1 rounded-full text-xs">
                 {blog.category}
               </div>
             </div>
@@ -43,7 +43,7 @@ export default function BlogsPage() {
               </div>
               <h3 className="text-xl font-semibold">{blog.title}</h3>
               <p className="text-muted-foreground" dangerouslySetInnerHTML={{ __html: blog.excerpt }} />
-              <Button asChild variant="link" className="p-0 h-auto text-orange-500">
+              <Button asChild variant="link" className="p-0 h-auto text-theme-500">
                 <Link href={`/blogs/${blog.id}`}>Read More →</Link>
               </Button>
             </div>

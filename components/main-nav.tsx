@@ -23,7 +23,7 @@ export function MainNav() {
         <Link
           key={item.path}
           href={item.path}
-          className={`text-base transition-colors hover:text-orange-500 ${pathname === item.path ? "font-medium" : ""}`}
+          className={`text-base transition-colors hover:text-theme-500 ${pathname === item.path ? "font-medium" : ""}`}
         >
           {item.name}
         </Link>
@@ -31,4 +31,3 @@ export function MainNav() {
     </nav>
   )
 }
-

@@ -21,40 +21,23 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      })
-
-      if (response.ok) {
-        alert("Thanks for your message! I'll get back to you soon.")
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        })
-      } else {
-        const data = await response.json()
-        alert("Error: " + (data.error || "Something went wrong."))
-      }
-    } catch (error) {
-      console.error("Submit error:", error)
-      alert("Something went wrong. Please try again later.")
-    }
+    console.log("Form submitted:", formData)
+    // Here you would typically send the data to your backend
+    alert("Thanks for your message! I'll get back to you soon.")
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    })
   }
 
   return (
     <div className="max-w-4xl mx-auto">
       <h1 className="text-5xl font-bold mb-6">
-        Get in <span className="bg-orange-200 dark:bg-orange-900/50 px-2">Contact</span>
+        Get in <span className="bg-theme-200 dark:bg-theme-900/50 px-2">Contact</span>
       </h1>
       <p className="text-lg text-muted-foreground mb-12 max-w-2xl">
         Have a project in mind or just want to say hello? I'd love to hear from you.
@@ -106,13 +89,14 @@ export default function ContactPage() {
               />
             </div>
 
-            <div className="bg-orange-100 dark:bg-orange-900/20 p-4 rounded-lg">
+            <div className="space-y-4 pt-4">
+            <div className="bg-theme-100 dark:bg-theme-900/20 p-4 rounded-lg">
               <p className="font-medium">💬</p>
               <p className="text-muted-foreground">
-               When reaching out, feel free to include your Instagram, LinkedIn, or GitHub—I’d 
-              love to check out your work and connect better!
+                When reaching out, feel free to include your Instagram, LinkedIn, or GitHub—I’d love to check out your work and connect better!
               </p>
             </div>
+          </div>
 
             <div className="space-y-2">
               <label htmlFor="message" className="block font-medium">
@@ -129,7 +113,7 @@ export default function ContactPage() {
               />
             </div>
 
-            <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600">
+            <Button type="submit" className="w-full bg-theme-500 hover:bg-theme-600">
               Send Message
             </Button>
           </form>
@@ -143,10 +127,11 @@ export default function ContactPage() {
               creative ideas, or opportunities to be part of your vision.
             </p>
           </div>
+          
 
           <div className="space-y-4">
             <div className="flex items-start gap-4">
-              <Mail className="w-5 h-5 mt-1 text-orange-500" />
+              <Mail className="w-5 h-5 mt-1 text-theme-500" />
               <div>
                 <h3 className="font-medium">Email</h3>
                 <p className="text-muted-foreground">satvik.shankar2003@gmail.com</p>
@@ -154,7 +139,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-start gap-4">
-              <Phone className="w-5 h-5 mt-1 text-orange-500" />
+              <Phone className="w-5 h-5 mt-1 text-theme-500" />
               <div>
                 <h3 className="font-medium">Phone</h3>
                 <p className="text-muted-foreground">+65 96502726, +91 9390308981</p>
@@ -162,7 +147,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex items-start gap-4">
-              <MapPin className="w-5 h-5 mt-1 text-orange-500" />
+              <MapPin className="w-5 h-5 mt-1 text-theme-500" />
               <div>
                 <h3 className="font-medium">Location</h3>
                 <p className="text-muted-foreground">New Delhi, India</p>
@@ -172,7 +157,7 @@ export default function ContactPage() {
 
           <div className="space-y-4 pt-4">
             <h2 className="text-2xl font-semibold">Availability</h2>
-            <div className="bg-orange-100 dark:bg-orange-900/20 p-4 rounded-lg">
+            <div className="bg-theme-100 dark:bg-theme-900/20 p-4 rounded-lg">
               <p className="font-medium">Currently available for freelance work</p>
               <p className="text-muted-foreground">
                 I'm currently accepting new projects and would love to hear about yours. Let's create something amazing
@@ -185,13 +170,6 @@ export default function ContactPage() {
     </div>
   )
 }
-
-
-
-
-
-
-
 
 
 

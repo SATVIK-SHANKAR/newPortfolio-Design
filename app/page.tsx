@@ -9,7 +9,7 @@ export default function Home() {
         <div className="flex-1 space-y-6">
           <h1 className="text-5xl md:text-6xl font-bold">
             <span className="highlight">Designer</span> <span className="inline-block">&</span> <br />
-            <span>Developer</span> <br />
+            <span className="highlight">Developer</span> <br />
             crafting <span className="highlight">digital</span> <br />
             experiences
           </h1>
@@ -18,16 +18,16 @@ export default function Home() {
             form and function seamlessly.
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
-            <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white">
+            <Button asChild className="bg-theme-500 hover:bg-theme-600 text-white">
               <Link href="/projects">View Projects</Link>
             </Button>
             <Button
               variant="outline"
-              className="border-orange-200 dark:border-orange-500 hover:bg-orange-100 dark:hover:bg-orange-900/20"
+              className="border-theme-200 dark:border-theme-500 hover:bg-theme-100 dark:hover:bg-theme-900/20"
             >
               <Link href="/contact">Get in Touch</Link>
             </Button>
-            <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white">
+            <Button asChild className="bg-theme-500 hover:bg-theme-600 text-white">
               <Link href="https://drive.google.com/file/d/1uLhiX8uHTzRVn4StyT6P-fgbjbqP5plX/view?usp=drive_link">Download CV</Link>
             </Button>
           </div>
@@ -65,7 +65,7 @@ export default function Home() {
                   A <span className="highlight">brief description</span> of this amazing project and the technologies
                   used.
                 </p>
-                <Link href={`/projects/${i}`} className="text-orange-500 hover:underline inline-block pt-2">
+                <Link href={`/projects/${i}`} className="text-theme-500 hover:underline inline-block pt-2">
                   View Project →
                 </Link>
               </div>
@@ -76,7 +76,7 @@ export default function Home() {
           <Button
             variant="outline"
             asChild
-            className="border-orange-200 dark:border-orange-500 hover:bg-orange-100 dark:hover:bg-orange-900/20"
+            className="border-theme-200 dark:border-theme-500 hover:bg-theme-100 dark:hover:bg-theme-900/20"
           >
             <Link href="/projects">View All Projects</Link>
           </Button>

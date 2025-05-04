@@ -10,16 +10,26 @@
 //       "BrokeMate is an AI-powered Telegram bot that simplifies expense tracking and bill splitting for groups. It supports natural language input, receipt scanning, smart reminders, and multilingual interactions — all powered by the Gemini API.",
 //     tags: ["UI/UX Design", "NextJs", "TypeScript", "TailwindCSS"],
 //     image: "/brokeMate.png",
+//     liveUrl: "https://broke-mate.vercel.app/", // Replace with actual URL
 //   },
 //   {
 //     id: 2,
 //     title: "Investly",
 //     description:
-//       "A comprehensive dashboard for financial analytics with real-time data visualization and reporting features.",
+//       "Investly (Orbital) is a portfolio optimization web app that delivers personalized investment insights using real-time financial data. It features intelligent asset allocation, a responsive UI, and interactive visualizations — built with Next.js, TypeScript, and Chart.js.",
 //     tags: ["NextJs", "TypeScript", "Chart.js", "TailwindCSS"],
 //     image: "/investly.png",
+//     liveUrl: "https://investly-v-2-1.vercel.app/", // Replace with actual URL
 //   },
-  
+//   {
+//     id: 3,
+//     title: "Hospital Connect",
+//     description:
+//       "Hospital Connect is a blockchain-powered web app that provides a live global directory of hospital resources. It enables hospitals to request and share critical medical supplies like ventilators and machines during emergencies.",
+//     tags: ["NextJs", "TypeScript", "Chart.js", "TailwindCSS"],
+//     image: "/hospitalConnect.png",
+//     liveUrl: "https://hospital-connect-delta.vercel.app/", // Replace with actual URL
+//   },
 // ]
 
 // export default function ProjectsPage() {
@@ -49,7 +59,9 @@
 //                 ))}
 //               </div>
 //               <Button asChild variant="link" className="p-0 h-auto text-orange-500">
-//                 <Link href={`/projects/${project.id}`}>View Project Details →</Link>
+//                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+//                   View Project Details →
+//                 </a>
 //               </Button>
 //             </div>
 //           </div>
@@ -58,6 +70,9 @@
 //     </div>
 //   )
 // }
+
+
+
 
 import Image from "next/image"
 import Link from "next/link"
@@ -97,10 +112,10 @@ export default function ProjectsPage() {
   return (
     <div>
       <h1 className="text-5xl font-bold mb-6">
-        My <span className="bg-orange-200 dark:bg-orange-900/50 px-2">Projects</span>
+        My <span className="bg-theme-200 dark:bg-theme-900/50 px-2">Projects</span>
       </h1>
       <p className="text-lg text-muted-foreground mb-12 max-w-2xl">
-        A collection of my recent work spanning UI/UX design, front-end development, and design systems.
+        A collection of my recent work spanning UI/UX design, front-end development, and blockchain.
       </p>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -119,10 +134,8 @@ export default function ProjectsPage() {
                   </span>
                 ))}
               </div>
-              <Button asChild variant="link" className="p-0 h-auto text-orange-500">
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                  View Project Details →
-                </a>
+              <Button asChild variant="link" className="p-0 h-auto text-theme-500">
+                <Link href={`/projects/${project.id}`}>View Project Details →</Link>
               </Button>
             </div>
           </div>

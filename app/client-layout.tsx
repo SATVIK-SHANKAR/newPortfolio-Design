@@ -8,17 +8,20 @@ import { MainNav } from "@/components/main-nav"
 import { MobileNav } from "@/components/mobile-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { EntryAnimation } from "@/components/entry-animation"
+import { useColorTheme } from "@/components/theme-context"
 
 interface ClientRootLayoutProps {
   children: React.ReactNode
 }
 
 export function ClientRootLayout({ children }: ClientRootLayoutProps) {
+  const { colorTheme } = useColorTheme()
+
   return (
     <>
       <EntryAnimation />
       <div className="min-h-screen flex flex-col">
-        <div className="border-orange-500 border-[25px] min-h-screen flex flex-col">
+        <div className="border-theme-500 border-[25px] min-h-screen flex flex-col">
           <header className="container mx-auto py-4">
             <div className="flex justify-between items-center">
               <h1 className="text-2xl font-bold">Portfolio</h1>
